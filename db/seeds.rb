@@ -27,3 +27,10 @@ List.create!(name: "Comedy")
 List.create!(name: "Drama")
 List.create!(name: "Classic")
 List.create!(name: "To rewatch")
+
+movies = Movie.all
+last_list = List.last
+
+movies.each do |movie|
+  Bookmark.create!(comment: "Amazing list", movie_id: movie.id , list_id: last_list.id)
+end
