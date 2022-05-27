@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   def index
+    @lists = List.all
   end
   def create
   end
@@ -8,6 +9,11 @@ class ListsController < ApplicationController
   def edit
   end
   def show
+
+    @list = List.find(params[:id])
+    # @bookmarks = Bookmark.all
+    @movies = @list.movies
+
   end
   def update
   end
