@@ -9,11 +9,9 @@ class ListsController < ApplicationController
   def edit
   end
   def show
-
     @list = List.find(params[:id])
     # @bookmarks = Bookmark.all
     @movies = @list.movies
-
   end
   def update
   end
