@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for [ @list, @bookmark ] do |f| %>
+    <%= f.input :comment %>
+    <%# <%= f.hidden_field :list_id, value: params[:list_id]  %>
+    <%= f.association :movie %>
+    <%= f.button :submit %>
+  <% end %>
+
+</div>

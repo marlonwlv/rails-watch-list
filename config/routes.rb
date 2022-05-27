@@ -9,6 +9,16 @@ Rails.application.routes.draw do
   # A user can see the details of a given list and its name
   # get 'lists/:id', to: 'lists#show'
 
-  resources :lists, only: [:index, :show, :new, :create]
+  # A user can add a new bookmark (movie/list pair) to an existing list
+  # Checkout simple_form docs about f.association to easily create a select dropdown for our list of movies.
+
+
+
+  resources :lists, only: [:new, :create]
+  resources :lists, only: [:index, :show] do
+    resources :bookmarks, only: [:new, :create]
+  end
+
+
 
 end
