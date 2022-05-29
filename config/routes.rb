@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   # A user can add a new bookmark (movie/list pair) to an existing list
   # Checkout simple_form docs about f.association to easily create a select dropdown for our list of movies.
 
-
-
+  resources :bookmarks, only: [:destroy]
   resources :lists, only: [:new, :create]
   resources :lists, only: [:index, :show] do
     resources :bookmarks, only: [:new, :create]

@@ -17,8 +17,9 @@ class ListsController < ApplicationController
   end
   def show
     @list = List.find(params[:id])
-    # @bookmarks = Bookmark.all
-    @movies = @list.movies
+    @bookmarks = @list.bookmarks
+    # @movie = Movie.find(@boo)
+    # @bookmark = @list.bookmark
   end
   def update
   end

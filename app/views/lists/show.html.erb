@@ -6,18 +6,19 @@
 
 <div class="container">
   <div class="cards">
-    <% @movies.each do |movie| %>
+    <% @bookmarks.each do |bookmark| %>
       <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-trip-infos">
           <div>
-            <h2><%= movie.title %></h2>
-            <p><%= movie.rating %> </p>
+            <h2><%= Movie.find(bookmark.movie_id).title %></h2>
+            <p><%= Movie.find(bookmark.movie_id).rating %> </p>
           </div>
-          <p class="card-trip-pricing"><%= movie.overview %></p>
+          <p class="card-trip-pricing"><%= Movie.find(bookmark.movie_id).overview %></p>
           <div>
-            <p><%= movie.overview %></p>
-            <a href="">delete</a>
+            <p><%= bookmark.comment %></p>
+            <%= link_to 'delete', bookmark_path(bookmark), method: :delete %>
+            <%# <%= link_to 'delete', list_bookmark_path(@bookmark)  %>
           </div>
         </div>
       </div>
